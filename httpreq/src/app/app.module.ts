@@ -16,11 +16,13 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import {DropDowndirective} from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { RecipeItemComponent} from './recipes/recipe-list/recipe-item/recipe-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
+   AuthComponent,
     LoadingSpinnerComponent,
     HeaderComponent,
     RecipesComponent,
@@ -30,7 +32,8 @@ import {DropDowndirective} from './shared/dropdown.directive';
     RecipeStartComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropDowndirective
+    DropDowndirective,
+    RecipeItemComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import {DropDowndirective} from './shared/dropdown.directive';
     
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

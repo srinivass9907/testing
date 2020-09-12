@@ -1,38 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import{AngularFireModule} from '@angular/fire'
-import{environment} from '../environments/environment';
-import{AngularFirestoreModule} from '@angular/fire/firestore';
-import{AuthService} from './services/auth.service';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { BooksComponent } from './books/books.component';
-import { AddBookComponent } from './add-book/add-book.component';
-
-
+import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
+import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SignInComponent,
-    SignUpComponent,
-    DashboardComponent,
-    BooksComponent,
-    AddBookComponent
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent,
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase, 'book-list-app'),
-    AngularFirestoreModule,
-    AppRoutingModule,AngularFireAuthModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
